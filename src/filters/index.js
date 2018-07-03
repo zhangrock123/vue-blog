@@ -1,3 +1,5 @@
+import timeAgo from '@/utils/timeago';
+
 // 常用数字精度换算
 export function toFixed(val, num = 2) {
   if (isNaN(val)) {
@@ -22,4 +24,9 @@ export function wordLimit(val, limitCount = 9999) {
     }
   }
   return `${tmpStr}${realLen > limitCount ? '...' : ''}`;
+}
+
+
+export function setTimeAgo(val) {
+  return timeAgo(val);
 }
