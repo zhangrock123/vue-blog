@@ -1,4 +1,5 @@
 const INDEX = r => require.ensure([], () => r(require('@/pages/index.vue')), 'index');
+const DETAIL = r => require.ensure([], () => r(require('@/pages/detail.vue')), 'detail');
 
 
 /**
@@ -20,11 +21,16 @@ export default [
     path: '/index',
     name: 'index',
     meta: {
-      auth: true,
-      title: '首页',
-      template: 'appLayout',
-      menuTag: 'hotel'
+      title: '首页'
     },
     component: INDEX
+  },
+  {
+    path: '/detail/:id',
+    name: 'detail',
+    meta: {
+      title: '详情'
+    },
+    component: DETAIL
   }
 ];
